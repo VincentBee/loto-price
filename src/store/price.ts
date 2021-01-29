@@ -95,7 +95,7 @@ export const loadPricesApi = () => (dispatch: any) => {
     dispatch(loadPrices());
 
     axios.get(
-        'https://www.fdj.fr/apigw/rtg/rest/euromillions'
+        '/apigw/rtg/rest/euromillions'
     ).then((response) => {
         dispatch(loadPricesSuccess(response.data.multiples.map((data: any) => ({
             number: data.pattern[0],
