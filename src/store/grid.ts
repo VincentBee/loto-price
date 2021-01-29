@@ -2,37 +2,9 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { RootState } from './index';
 import { Price, PriceMinMax, selectMinMax, selectPrices } from './price';
 
-/**
- * A price represent an amount of money for a given number of numbers and stars in the grid.
- */
-export enum ItemStatus {
-
-    /**
-     * A number or a star is selected if the user has clicked on it.
-     */
-    SELECTED,
-
-    /**
-     * If the user has reach the maximum number of selected item, every unselected items are disabled.
-     */
-    DISABLED,
-
-    /**
-     * A number or a star is ready to be selected if the user hasn't reach the maximum number of selected items.
-     */
-    NOT_SELECTED,
-}
 export interface GridState {
-
-    /**
-     * The list of selected numbers.
-     */
-    numbers: boolean[],
-
-    /**
-     * The list of selected stars.
-     */
-    stars:  boolean[],
+    numbers: boolean[];
+    stars:  boolean[];
 }
 
 export const gridSlice = createSlice({
