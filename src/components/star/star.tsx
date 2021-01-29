@@ -1,12 +1,21 @@
 import { useDispatch } from 'react-redux';
-import { toggleStar } from './gridSlice';
-import styles from './Grid.module.css';
+import { toggleStar } from '../../store/grid';
+import styles from './star.module.css';
 
-export function Star({ identifier, isSelected }: { identifier: number, isSelected: boolean }) {
+interface Props {
+    identifier: number;
+    isSelected: boolean;
+    isDisabled: boolean;
+}
+export function Star({ identifier, isSelected, isDisabled }: Props) {
     const dispatch = useDispatch();
+    const statusClass = isSelected? styles.starSelected : isDisabled ? styles.starDisabled : '';
 
     return (
-        <div className={`${styles.star} ${isSelected ? styles.starSelected : ''}`} onClick={() => dispatch(toggleStar({ identifier, checked: !isSelected}))}>
+        <div
+            className={`${styles.star} ${statusClass}`}
+            onClick={() => !isDisabled && dispatch(toggleStar({ identifier, checked: !isSelected}))}>
+
             <span>{ identifier + 1 }</span>
             <svg viewBox="0 0 512 512">
                 <path d="M511.267,197.258c-1.764-5.431-6.457-9.389-12.107-10.209l-158.723-23.065L269.452,20.157 

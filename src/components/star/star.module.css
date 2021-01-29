@@ -1,0 +1,40 @@
+.starList {
+    grid-area: starList;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.star {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    color: #f9b743;
+    transition: all .1s ease-out;
+    font-weight: 700;
+    font-size: 18px;
+    user-select: none;
+    cursor: pointer;
+}
+.star svg {
+    height: 50px;
+    width: 50px;
+    fill: white;
+    stroke: #f9b743;
+    stroke-width: 20;
+}
+.starSelected {
+    color: white;
+}
+.starDisabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+.starSelected svg {
+    fill: #f9b743;
+}
+.star span {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

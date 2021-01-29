@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-areas: 
+        "cost cost"
+        "numberList starList";
+    grid-template-columns: 1fr 25%;
+    grid-template-rows: auto auto;
+    background: #f0f0f5;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    gap: 20px;
+}
+
+.cost {
+    grid-area: cost;
+    display: flex;
+    align-items: center;
+}
+.title {
+    color: #243b82;
+    font-size: 26px;
+    flex: 1;
+}
+.price {
+    flex: 0 0 auto;
+    color: #c12a2a;
+    font-size: 18px;
+}

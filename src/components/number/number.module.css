@@ -1,0 +1,53 @@
+.numberList {
+    grid-area: numberList;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.number {
+    position: relative;
+    height: 42px;
+    width: 42px;
+    border-radius: 666px;
+    background: white;
+    cursor: pointer;
+    transition: all ease-out .1s;
+}
+.number span {
+    width: 100%;
+    color: #243b82;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 42px;
+    font-weight: 700;
+    font-size: 18px;
+    user-select: none;
+    transition: all ease-out .1s;
+    z-index: 2;
+}
+.number::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    height: 0;
+    width: 0;
+    background: #243b82;
+    border-radius: 666px;
+    transition: all ease-out .1s;
+    z-index: 1;
+}
+.number.numberSelected span {
+    color: white;
+}
+.number.numberSelected::after {
+    top: 0;
+    left: 0;
+    height: 42px;
+    width: 42px;
+}
+.number.numberDisabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

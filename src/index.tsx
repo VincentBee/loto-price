@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import App from './app';
+import store from './store';
+import { loadPricesApi } from './store/price';
+
+/**
+ * The load price api call is made before the App component initialization in order to win time.
+ */
+store.dispatch(loadPricesApi());
 
 ReactDOM.render(
     <React.StrictMode>
